@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User preferences</title>
+</head>
+<body>
+    <h2>Choose your home page preferences:</h2>
+    <form onsubmit="saveUserPrefs()">
+        <label for="bg-color">Choose color for background:</label> 
+        <input type="color" id="bg-color" name="bg-color" /><br />
+        <label for="txt-color">Choose color for text:</label>
+        <input type="color" id="txt-color" name="txt-color" /> <br />
+        <label for="birth-date">Choose your birth date:</label>
+        <input type="date" id="birth-date" name="birth-date"  onchange="checkValid()" /><br />
+        <label for="email">Email:</label>
+        <input type="email" id="email" required /> <br />
+        <label for="age">Age:</label>
+        <input type="range" id="age" name="age" min="18" max="120" onchange="displayAge(this.value)" onchange="checkValid()" /> <span class="age"></span>
+        <button type="submit">Submit</button>
+    </form>
+    <footer>
+        <a href="index.html">Back to home page</a>
+    </footer>
+
+    <script src="js/util-service.js"></script>
+    <script src="js/stoarge-service.js"></script>
+    <script src="js/user-pref-service.js"></script>
+</body>
+</html>
